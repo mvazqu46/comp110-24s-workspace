@@ -1,6 +1,5 @@
-"""EX01 - Simple Battleship """
+"""EX01 - Simple Battleship! """
 __author__= "730718822"
-
 BLUE_BOX: str = "\U0001F7E6"
 RED_BOX: str = "\U0001F7E5"
 WHITE_BOX: str = "\U00002B1C"
@@ -11,6 +10,12 @@ user_input: str = input("Pick a secret boat location between 1 and 4: ")
 user_number: int = int(user_input)
 user_input2: str = input("Guess a number between 1 and 4: ")
 user_number2: int = int(user_input2)
+if user_number > 4:
+    print ("Error! " + str(user_number2)+ str(msg2))
+    exit()
+elif user_number <1:
+    print("Error! "+ str(user_number2)+ str(msg1))
+    exit()
 if user_number2 > 4:
     print ("Error! " + str(user_number2)+ str(msg2))
     exit()
