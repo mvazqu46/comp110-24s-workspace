@@ -1,5 +1,6 @@
 """EX01 - Simple Battleship! """
 __author__= "730718822"
+
 BLUE_BOX: str = "\U0001F7E6"
 RED_BOX: str = "\U0001F7E5"
 WHITE_BOX: str = "\U00002B1C"
