@@ -11,7 +11,6 @@ secret_column: int = 2
 message_hit: str = "Hit!"
 message_miss: str = "Miss!"
 
-#Start of the code:
 while True:
     guess_row: str = input("Guess a row: ")
     guess_row2: int = int(guess_row)
@@ -27,6 +26,7 @@ while True:
         pass
     else:
         print(f"The grid is only {sz_grid} by {sz_grid}. Try again:")
+        continue
     while counter_row <= sz_grid:
         emoji_row = ""
         counter_column = 1
@@ -43,7 +43,11 @@ while True:
                 counter_column += 1
         print(emoji_row)
         counter_row += 1
-    if guess_correct:
-        print(message_hit)
+    if guess_row2 == secret_row and guess_column2 == secret_column:
+        print("Hit!")
+    elif guess_row2 == secret_row:
+        print("Close! Correct row, wrong column.")
+    elif guess_column2 == secret_column:
+        print("Close! Correct column, wrong row.")
     else:
-        print(message_miss) 
+        print("Miss!")
