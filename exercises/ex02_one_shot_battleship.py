@@ -1,10 +1,10 @@
 """One shot Battleship!"""
-__author__= "730718822"
+__author__="730718822"
 
 #Start of the variables:
-BLUE_BOX: str = "\U0001F7E6"
-RED_BOX: str = "\U0001F7E5"
-WHITE_BOX: str = "\U00002B1C"
+blue_box: str = "\U0001F7E6"
+red_box: str = "\U0001F7E5"
+white_box: str = "\U00002B1C"
 sz_grid: int = 4
 secret_row: int = 3
 secret_column: int = 2
@@ -20,8 +20,7 @@ while True:
     counter_column: int = 1
     emoji_row: str = ""
     guess_correct = (guess_row2 == secret_row) and (guess_column2 == secret_column)
-    result_box = RED_BOX if guess_correct else WHITE_BOX
-
+    result_box = red_box if guess_correct else white_box
     if 0 <= guess_row2 < sz_grid and 0 <= guess_column2 < sz_grid:
         pass
     else:
@@ -35,11 +34,11 @@ while True:
                 if guess_column2 == counter_column:
                     emoji_row += result_box
                 else:
-                    emoji_row += BLUE_BOX
+                    emoji_row += blue_box
                 counter_column += 1
         else:
             while counter_column <= sz_grid:
-                emoji_row += BLUE_BOX
+                emoji_row += blue_box
                 counter_column += 1
         print(emoji_row)
         counter_row += 1
@@ -50,4 +49,4 @@ while True:
     elif guess_column2 == secret_column:
         print("Close! Correct column, wrong row.")
     else:
-        print("Miss!")
+        print("Miss")
