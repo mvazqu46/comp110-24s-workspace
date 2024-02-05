@@ -49,4 +49,4 @@ while True:
     elif guess_column2 == secret_column:
         print("Close! Correct column, wrong row.")
     else:
-        print("Miss")
+        print("Miss") 
