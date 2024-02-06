@@ -1,7 +1,7 @@
-"""One shot Battleship!"""
-__author__="730718822"
+"""One shot battleship."""
+__author__ = "730718822"
 
-#Start of the variables:
+'#Start of the variables:'
 blue_box: str = "\U0001F7E6"
 red_box: str = "\U0001F7E5"
 white_box: str = "\U00002B1C"
@@ -10,43 +10,41 @@ secret_row: int = 3
 secret_column: int = 2
 message_hit: str = "Hit!"
 message_miss: str = "Miss!"
-
+'# Guess a row'
 while True:
-    guess_row: str = input("Guess a row: ")
-    guess_row2: int = int(guess_row)
-    guess_column: str = input("Guess a column: ")
-    guess_column2: int = int(guess_column)
-    counter_row: int = 1
-    counter_column: int = 1
-    emoji_row: str = ""
-    guess_correct = (guess_row2 == secret_row) and (guess_column2 == secret_column)
-    result_box = red_box if guess_correct else white_box
-    if 0 <= guess_row2 < sz_grid and 0 <= guess_column2 < sz_grid:
-        pass
+    guess_row = int(input("Guess a row: "))
+    if 1 <= guess_row <= sz_grid:
+        break
     else:
-        print(f"The grid is only {sz_grid} by {sz_grid}. Try again:")
-        continue
-    while counter_row <= sz_grid:
-        emoji_row = ""
-        counter_column = 1
-        if guess_row2 == counter_row:
-            while counter_column <= sz_grid:
-                if guess_column2 == counter_column:
-                    emoji_row += result_box
-                else:
-                    emoji_row += blue_box
-                counter_column += 1
+        print(f"The grid is only {sz_grid} by {sz_grid}. Try again: ")
+'# Guess a column'
+while True:
+    guess_column = int(input("Guess a column: "))
+    if 1 <= guess_column <= sz_grid:
+        break
+    else:
+        print(f"The grid is only {sz_grid} by {sz_grid}. Try again: ")
+'# Code for grid printing'
+grid_row = 1
+while grid_row <= sz_grid:
+    emoji_row = ""
+    grid_column = 1
+    while grid_column <= sz_grid:
+        if guess_row == grid_row and guess_column == grid_column:
+            if guess_row == secret_row and guess_column == secret_column:
+                emoji_row += red_box 
+            else:
+                emoji_row += white_box  
         else:
-            while counter_column <= sz_grid:
-                emoji_row += blue_box
-                counter_column += 1
-        print(emoji_row)
-        counter_row += 1
-    if guess_row2 == secret_row and guess_column2 == secret_column:
-        print("Hit!")
-    elif guess_row2 == secret_row:
-        print("Close! Correct row, wrong column.")
-    elif guess_column2 == secret_column:
-        print("Close! Correct column, wrong row.")
-    else:
-        print("Miss") 
+            emoji_row += blue_box  
+        grid_column += 1
+    print(emoji_row)
+    grid_row += 1
+'# Hit, Miss, or Hint'
+if guess_row == secret_row and guess_column == secret_column:
+    print(message_hit)
+elif guess_row == secret_row or guess_column == secret_column:
+
+    print("Close! Correct row, wrong column." if guess_row == secret_row else "Close! Correct column, wrong row.")
+else:
+    print(message_miss)
