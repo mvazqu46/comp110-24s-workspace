@@ -17,7 +17,6 @@ def favorite_color(colors: dict[str, str]) -> str:
     count: dict[str, int] = {}
 
     for color in colors.values():
-
         if color in count: 
             count[color] += 1
         else:
