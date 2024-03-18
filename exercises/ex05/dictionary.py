@@ -21,7 +21,7 @@ def favorite_color(colors: dict[str, str]) -> str:
             count[color] += 1
         else:
             count[color] = 1
-    
+            
     popular = ""
     max_color_count = 0
     for color, color_count in count.items():
