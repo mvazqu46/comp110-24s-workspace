@@ -32,8 +32,8 @@ def test_invert_edge_case2():
 def test_favorite_color_use_case():
     """Test favorite_color."""
     colors = {"Alyssa": ["Green"], "Drake": ["Green"], "Atthena": ["Blue"]}
-    favcolor = "Blue"
-    popular = "Blue"
+    favcolor = "Green"
+    popular = "Green"
     favorite_color(colors, favcolor, popular)
     assert colors == {"Alyssa": ["Green"], "Drake": ["Green"], "Athena": ["Blue"]}
 
@@ -41,8 +41,8 @@ def test_favorite_color_use_case():
 def test_favorite_color_edge_case():
     """Test favorite_color."""
     colors = {"Alyssa": ["Green"], "Drake": ["Green"], "Atthena": ["Blue"]}
-    favcolor = "Blue"
-    popular = "Blue"
+    favcolor = "Green"
+    popular = "Green"
     favorite_color(colors, favcolor, popular)
     assert colors == {"Alyssa": ["Green"], "Drake": ["Green"], "Athena": ["Blue"]}
 
@@ -50,8 +50,8 @@ def test_favorite_color_edge_case():
 def test_favorite_color_edge_case2():
     """Test favorite color."""
     colors = {"Alyssa": ["Green"], "Drake": ["Green"], "Atthena": ["Blue"]}
-    favcolor = "Blue"
-    popular = "Blue"
+    favcolor = "Green"
+    popular = "Green"
     favorite_color(colors, favcolor, popular)
     assert colors == {"Alyssa": ["Green"], "Drake": ["Green"], "Athena": ["Blue"]}
 
